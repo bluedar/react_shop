@@ -45,17 +45,19 @@ export default function ProductDetail() {
 
   return (
     <div className="w-full max-w-screen-xl m-auto py-24 md:py-40">
-      <section className="flex flex-col md:flex-row">
-        <img src={image} alt={title} />
-        <div className="">
-          <p>여성의류 / {category}</p>
-          <h2>{title}</h2>
-          <p>{`₩${price}`}</p>
-          <p>{description}</p>
-          <div>
-            <label htmlFor="select">옵션</label>
+      <section className="flex flex-col gap-4 md:gap-12 md:flex-row py-4">
+        <img className=" w-full max-w-3xl basis-7/12" src={image} alt={title} />
+        <div className=" w-full basis-5/12 flex flex-col p-8 md:p-0">
+          <p className=" text-pink-700">여성의류 / {category}</p>
+          <h2 className="text-2xl font-bold py-6">{title}</h2>
+          <p className="text-xl pt-4 pb-10 text-pink-700 border-b border-gray-400">{`₩${price}`}</p>
+          <p className="py-4 text-sm">{description}</p>
+          <div className="flex items-center">
+            <label className=" text-pink-300" htmlFor="select">
+              옵션
+            </label>
             <select
-              name=""
+              className="p-2 m-4 flex-1 border border-pink-200 outline-none "
               id="select"
               onChange={handleSelect}
               value={selected}
